@@ -1,5 +1,5 @@
-#### Advanced YouTube Speed Manager for
-- watching sport, gaming, news, tutorials, foreign language lessons, etc.
+#### Advanced YouTube Speed Manager
+Watch your sport, gaming, news, tutorials, foreign language lessons, etc. with handy speed controller.
 
 ##### How does it work?
 Content script is run in every tab you open and in every iframe of the tab. The script searches for YouTube videos and embeds there block with Speeder controls.
