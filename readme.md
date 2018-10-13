@@ -43,6 +43,8 @@ https://developer.chrome.com/extensions/getstarted#manifest
 (skip the first paragraph about Manifest, it starts with the phrase
 "The directory holding the manifest file can be added as an extension in developer mode in its current state.")
 
+##### Availability:	Since Chrome 26. 
+
 Contains no adds or any other irrelevant stuff.
 
 Feedback, comments and suggestions: mxk700@gmail.com.
