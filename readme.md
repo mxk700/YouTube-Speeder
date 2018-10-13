@@ -1,4 +1,4 @@
-#### Advanced YouTube Speeder
+#### Advanced YouTube Speed Manager for
 - watching sport, gaming, news, tutorials, foreign language lessons, etc.
 
 ##### How does it work?
