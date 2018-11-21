@@ -5,20 +5,31 @@
 	var speederProto = null;
 	var speeders = [];
 	var options = getSettings();
+	var notYoutubeVideos = [];
 
 	if(!options) {
 		console.error("No options retrived.");
 		return;
 	}
 
-	videoSearcher();
+	youtubeVideoSearcher();
+
+  (function listenToNew_NOT_YoutubeVideo(){
+		if(window.location.host === "www.youtube.com") return;
+
+		var config = { childList:true, subtree:true };
+		const observer = new MutationObserver( otherVideoSearcher );
+		observer.observe( document, config );
+
+	})();
+
 
   (function listenToNewYoutubeVideo(){
     var ytdApp = document.querySelector("ytd-app");
     if(!ytdApp) return;
 
     var config = { childList:true, subtree:true };
-    const observer = new MutationObserver( videoSearcher );
+    const observer = new MutationObserver( youtubeVideoSearcher );
     observer.observe( document.querySelector("ytd-app"), config );
   })();
 
@@ -33,7 +44,7 @@
 
 
 	// LIBRARY		LIBRARY		LIBRARY		LIBRARY		LIBRARY		LIBRARY		LIBRARY		LIBRARY
-	function videoSearcher (){
+	function youtubeVideoSearcher (){
 		var vTags	= document.querySelectorAll('video');
 		if( !vTags.length ) return;
 
@@ -47,8 +58,22 @@
 			manageSettings([speeder], true);
 			speeders.push(speeder);
 		});
-
 	}
+	function otherVideoSearcher(){
+		var vTags	= document.querySelectorAll('video');
+		if( !vTags.length ) return;
+
+		for(let i = 0; i < vTags.length; i++){
+			let isOld = notYoutubeVideos.some( el => el === vTags[i] );
+
+			// console.log(isOld);
+			isOld || notYoutubeVideos.push(vTags[i]);
+		}
+
+		// console.log("Not-Youtube videos found!");
+		console.log(notYoutubeVideos);
+	}
+
 
 	function getSettings(){
 		var b = document.getElementById("mxk700_YT_ext_settings_buffer");
