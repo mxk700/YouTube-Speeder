@@ -14,14 +14,14 @@
 
 	youtubeVideoSearcher();
 
-  (function listenToNew_NOT_YoutubeVideo(){
-		if(window.location.host === "www.youtube.com") return;
-
-		var config = { childList:true, subtree:true };
-		const observer = new MutationObserver( otherVideoSearcher );
-		observer.observe( document, config );
-
-	})();
+  // (function listenToNew_NOT_YoutubeVideo(){
+	// 	if(window.location.host === "www.youtube.com") return;
+	//
+	// 	var config = { childList:true, subtree:true };
+	// 	const observer = new MutationObserver( otherVideoSearcher );
+	// 	observer.observe( document, config );
+	//
+	// })();
 
 
   (function listenToNewYoutubeVideo(){
@@ -59,20 +59,16 @@
 			speeders.push(speeder);
 		});
 	}
-	function otherVideoSearcher(){
-		var vTags	= document.querySelectorAll('video');
-		if( !vTags.length ) return;
-
-		for(let i = 0; i < vTags.length; i++){
-			let isOld = notYoutubeVideos.some( el => el === vTags[i] );
-
-			// console.log(isOld);
-			isOld || notYoutubeVideos.push(vTags[i]);
-		}
-
-		// console.log("Not-Youtube videos found!");
-		console.log(notYoutubeVideos);
-	}
+	// function otherVideoSearcher(){
+	// 	var vTags	= document.querySelectorAll('video');
+	// 	if( !vTags.length ) return;
+	//
+	// 	for(let i = 0; i < vTags.length; i++){
+	// 		let isOld = notYoutubeVideos.some( el => el === vTags[i] );
+	// 		isOld || notYoutubeVideos.push(vTags[i]);
+	// 	}
+	// 	// console.log(notYoutubeVideos);
+	// }
 
 
 	function getSettings(){
