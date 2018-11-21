@@ -69,10 +69,15 @@
 		var vTags	= document.querySelectorAll('video');
 		if( !vTags.length ) return;
 
-		for(let i = 0; i < vTags.length; i++){
-			let isOld = notYoutubeVideos.some( el => el === vTags[i] );
-			isOld || notYoutubeVideos.push(vTags[i]);
-		}
+		vTags.forEach( (vTag) => {
+			var mxkSldr = vTag.parentElement.querySelector("#mxkYtb_container");
+			if(mxkSldr) return;							// if video tag has been already handled, return;
+
+			var speeder = NonYTB_Speeder.call( Object.create(SpeederProto), vTag );
+			manageSettings([speeder], true);
+			speeders.push(speeder);
+		});
+
 	}
 
 	function listenToOtherVideo(){
@@ -130,9 +135,12 @@
 	}
 
 
-	function Speeder() {
+// SPEEDERS
+// SPEEDERS
+	function Speeder(elem) {
+		this.video 			= elem;
 		this.cont 			= newEl({tagName:"div", id:"mxkYtb_container"});
-		this.decrement 		= newEl({tagName:"button", id:"mxkYtb_decrement"});
+		this.decrement 	= newEl({tagName:"button", id:"mxkYtb_decrement"});
 		this.increment  = newEl({tagName:"button", id:"mxkYtb_increment"});
 		this.resetter 	= newEl({tagName:"button", id:"mxkYtb_resetter"});
 
@@ -161,23 +169,37 @@
 		listener.apply(this.increment, ["mousedown", this.mouseDownUp.bind(this)]);
 		listener.apply(this.resetter, ["click", this.reset.bind(this)]);
 		listener.apply(this.cont, ["wheel", this.mousewheel.bind(this)], {passive: false});
-		listener.apply(this.cont, ["mouseenter", this.mouseenter.bind(this)]);
-		listener.apply(this.cont, ["mouseleave", this.mouseleave.bind(this)]);
 		listener.apply(this.cont, ["keydown", this.keydown.bind(this)]);
 
 		return this;
 	}
 
+	function NonYTB_Speeder(elem){
+		Speeder.call(this, elem);
+
+		this.parEl = elem.parentElement;
+		this.parEl.appendChild(this.cont);
+
+		this.cont.classList.add("non-ytb");
+
+		return this;
+	}
+
 	function YT_Speeder(elem){
-		Speeder.call(this);
+		Speeder.call(this, elem);
 
 		// YT_Speeder environment:
-		this.video 			= elem;
 		this.parEl 			= elem.parentElement.parentElement;
 		this.ytBottom 	= this.parEl.querySelector(".ytp-chrome-bottom");
 		this.ytBar 			= this.ytBottom.querySelector(".ytp-chrome-controls");
 		this.ytBarLeft 	= this.ytBar.querySelector(".ytp-left-controls");
 		this.ytBarRight = this.ytBar.querySelector(".ytp-right-controls");
+
+		// because someone in YT rewrite original addEventListener
+		var listener = EventTarget.prototype.addEventListener;
+		listener.apply(this.cont, ["mouseenter", this.mouseenter.bind(this)]);
+		listener.apply(this.cont, ["mouseleave", this.mouseleave.bind(this)]);
+
 
 		this.ytBar.appendChild(this.cont);
 
@@ -430,7 +452,8 @@
 		}
 	}
 
-
+// AUXILIARY
+// AUXILIARY
 	function round(x){
 		return Math.round( x * 10) / 10;
 	}
@@ -446,5 +469,4 @@
 
 		return res;
 	}
-
 })();

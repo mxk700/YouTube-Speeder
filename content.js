@@ -14,6 +14,8 @@
     mouseInterval: 100
   };
 
+  if(!document.body) return;
+
   var buffer = document.createElement("div");
   buffer.id = "mxk700_YT_ext_settings_buffer";
   document.body.appendChild(buffer);
@@ -59,14 +61,14 @@
     jsf.id   = 'mxk700_YT_ext_script';
     jsf.type = 'text/javascript';
     jsf.src  =  EXT_PATH + AUX_FILE;
-    document.body && document.body.appendChild(jsf);
+    document.body.appendChild(jsf);
 
     var style  = document.createElement('link');
     style.id   = 'mxk700_YT_ext_style';
     style.href  =  EXT_PATH + CSS_FILE;
     style.rel = 'stylesheet';
     style.type = "text/css";
-    document.body && document.body.appendChild(style);
+    document.body.appendChild(style);
   }
 
 })();
