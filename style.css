@@ -130,6 +130,7 @@
 }
 
 /*  NON YOUTUBE PAGES */
+
 #mxkYtb_container.non-ytb {
   z-index: 10000;
   background-color: grey;
@@ -139,14 +140,15 @@
   border: solid blue 1px;
   box-sizing: content-box;
 }
+#mxkYtb_container.non-ytb:hover {
+  width: auto;
+}
+#mxkYtb_container.non-ytb  #mxkYtb_digits{
+  width: 3em;
+}
 #mxkYtb_container.non-ytb *:not(:first-child)  {
   opacity: 0;
 }
 #mxkYtb_container.non-ytb:hover *{
   opacity: 1;
-}
-
-#mxkYtb_container.non-ytb:hover {
-  width: auto;
-
 }
