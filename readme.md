@@ -1,5 +1,5 @@
-#### Advanced YouTube Speed Manager for
-- watching sport, gaming, news, tutorials, foreign language lessons, etc.
+#### Advanced YouTube Speed Manager
+Watch your sport, games, news, tutorials, foreign language lessons, etc. with handy speed controller.
 
 ##### How does it work?
 Content script is run in every tab you open and in every iframe of the tab. The script searches for YouTube videos and embeds there block with Speeder controls.
@@ -35,13 +35,15 @@ Pressing Page Up or Page Down also changes speed value by 0.5.
 
 ##### Options
 You also can adjust The YouTube Speeder settings for your convenience.
-To get to the Options Page go to chrome://extensions/, find this Extension, click on "Details" button, then find "Extension options". In the Options Page you can set minimal, maximal and default speed value, as well as some others parameters.
+To get to the Options Page go to **chrome://extensions/**, find this Extension, click on "Details" button, then find "Extension options". In the Options Page you can set minimal, maximal and default speed value, as well as some others parameters.
 
 ##### Installation
 To install unpacked Chrome Extension follow the instructions here:
 https://developer.chrome.com/extensions/getstarted#manifest
 (skip the first paragraph about Manifest, it starts with the phrase
 "The directory holding the manifest file can be added as an extension in developer mode in its current state.")
+
+##### Availability:	Since Chrome 26. 
 
 Contains no adds or any other irrelevant stuff.
 
