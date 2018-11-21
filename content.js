@@ -59,14 +59,14 @@
     jsf.id   = 'mxk700_YT_ext_script';
     jsf.type = 'text/javascript';
     jsf.src  =  EXT_PATH + AUX_FILE;
-    document.body.appendChild(jsf);
+    document.body && document.body.appendChild(jsf);
 
     var style  = document.createElement('link');
     style.id   = 'mxk700_YT_ext_style';
     style.href  =  EXT_PATH + CSS_FILE;
     style.rel = 'stylesheet';
     style.type = "text/css";
-    document.body.appendChild(style);
+    document.body && document.body.appendChild(style);
   }
 
 })();
