@@ -14,7 +14,7 @@ With The YouTube Speeder you've dreamed about you can set playback speed using:
   - click on rounded orange square within the slider to set speed to default;
 
 ###### Keyboard:
-To use keyboard, mouse pointer should be hovered over the slider block  (the latest becomes a little bit brighter). Placing mouse pointer over the slider block also prevents YouTube top and bottom panels from hiding. In this mode you can use the next keys:
+To use keyboard, mouse pointer should be hovered over the slider block  (the latest becomes a little brighter). Placing mouse pointer over the slider block also prevents YouTube top and bottom panels from hiding. In this mode you can use the next keys:
   - speed up: Right Arrow, Up Arrow, + button;
   - speed up with acceleration: Page Up;
   - speed down: Left Arrow, Down Arrow, - button;
@@ -24,7 +24,7 @@ To use keyboard, mouse pointer should be hovered over the slider block  (the lat
   - minimal value: Delete;
 
 ###### Acceleration Mode.
-Allows you to change speed a little bit quicker.
+Allows you to change speed a little quicker.
 Press and hold "Ctrl" key to engage this Mode, then use:
   - mouse wheel;
   - keyboard arrows;
@@ -43,7 +43,7 @@ https://developer.chrome.com/extensions/getstarted#manifest
 (skip the first paragraph about Manifest, it starts with the phrase
 "The directory holding the manifest file can be added as an extension in developer mode in its current state.")
 
-##### Availability:	Since Chrome 26. 
+##### Availability:	Since Chrome 26.
 
 Contains no adds or any other irrelevant stuff.
 

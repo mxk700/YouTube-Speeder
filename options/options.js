@@ -23,15 +23,15 @@
 
   (function initSettings(){
     chrome.storage.local.get(
-      ["youtubeSpeedSettings"],
+      ["MXSpeederSettings"],
       function(res){
-        if( res.youtubeSpeedSettings ){
-          loadSettingsToDOM( res.youtubeSpeedSettings );
+        if( res.MXSpeederSettings ){
+          loadSettingsToDOM( res.MXSpeederSettings );
         }else{
           saveSettingsToStorage(DEFAULT);
           loadSettingsToDOM(DEFAULT);
         }
-
+        
         initListeners();
       }
     );
@@ -137,7 +137,7 @@
       settings.mouseInterval = +mouseInterval.value;
     }
 
-    chrome.storage.local.set ( {"youtubeSpeedSettings": settings} );
+    chrome.storage.local.set ( {"MXSpeederSettings": settings} );
   }
 
   function loadSettingsToDOM( opt ){

@@ -1,8 +1,5 @@
-.hidden {
-  display: none;
-}
-.invisible {
-  visibility: hidden;
+#mxkYtb_container * {
+  outline: none;
 }
 
 #mxkYtb_container {
@@ -12,12 +9,9 @@
   margin-top: 2px;
   outline: none;
 }
-#mxkYtb_container:focus, #mxkYtb_container:active {
+#mxkYtb_container:focus,
+#mxkYtb_container:active {
   background-color: rgba(256,256,256, .2);
-}
-
-#mxkYtb_container * {
-  outline: none;
 }
 
 #mxkYtb_container > button {
@@ -27,8 +21,15 @@
   margin: 5px;
 }
 
+.hidden {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
 
-#mxkYtb_increment, #mxkYtb_decrement {
+#mxkYtb_increment,
+#mxkYtb_decrement {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   background-color: transparent;
@@ -127,28 +128,4 @@
 .ytp-big-mode #mxkYtb_slider {
   height: 38px;
   width: 110px;
-}
-
-/*  NON YOUTUBE PAGES */
-
-#mxkYtb_container.non-ytb {
-  z-index: 10000;
-  background-color: grey;
-  position: absolute;
-  top: 0;
-  width: 2em;
-  border: solid blue 1px;
-  box-sizing: content-box;
-}
-#mxkYtb_container.non-ytb:hover {
-  width: auto;
-}
-#mxkYtb_container.non-ytb  #mxkYtb_digits{
-  width: 3em;
-}
-#mxkYtb_container.non-ytb *:not(:first-child)  {
-  opacity: 0;
-}
-#mxkYtb_container.non-ytb:hover *{
-  opacity: 1;
 }

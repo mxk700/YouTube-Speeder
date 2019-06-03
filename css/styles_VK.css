@@ -1,0 +1,93 @@
+#mxkYtb_container * {
+  outline: none;
+}
+
+#mxkYtb_container {
+  display: flex;
+  height: 30px;
+  float: left;
+  margin-top: 2px;
+  outline: none;
+}
+#mxkYtb_container:focus,
+#mxkYtb_container:active {
+  background-color: rgba(256,256,256, .2);
+}
+
+#mxkYtb_container > button {
+  height: 20px;
+  width: 20px;
+  padding: 0;
+  margin: 5px;
+}
+
+
+#mxkYtb_increment,
+#mxkYtb_decrement {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  background-color: transparent;
+  border-radius: 3px;
+}
+#mxkYtb_increment {
+  border-left: 15px  solid orange;
+  border-right-color: transparent;
+}
+#mxkYtb_increment:hover {
+  border-left-color: #fcc364 !important;
+}
+#mxkYtb_increment:active {
+  border-left-color: #ff6200 !important;
+}
+#mxkYtb_increment.arrowPressed {
+  border-left: 15px  solid #ff6200 !important;
+}
+#mxkYtb_decrement {
+  border-left-color: transparent;
+  border-right: 15px  solid orange;
+}
+#mxkYtb_decrement:hover {
+  border-right-color: #fcc364 !important;
+}
+#mxkYtb_decrement:active {
+  border-right-color: #ff6200 !important;
+}
+#mxkYtb_decrement.arrowPressed {
+  border-right: 15px  solid #ff6200 !important;
+}
+
+
+#mxkYtb_slider {
+  width: 80px;
+  background: #d3d3d3;
+  margin: 5px;
+}
+
+
+#mxkYtb_digits {
+  width: 35px;
+  padding-left: 4px;
+  border-radius: 4px;
+  opacity: .7;
+}
+
+
+#mxkYtb_resetter {
+  border-width: 0;
+  border-radius: 4px;
+  background-color: orange;
+}
+#mxkYtb_resetter:hover {
+  background-color: #fcc364;
+}
+#mxkYtb_resetter:active {
+  background-color: #ff6200;
+}
+
+
+/* VK.COM */
+.videoplayer_controls #mxkYtb_container{
+  position: absolute;
+  top: -1.8em;
+  right: 0;
+}

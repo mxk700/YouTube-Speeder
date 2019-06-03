@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "YouTube Speed",
-  "description": "Scale play speed in YouTube.",
+  "name": "Video Speeder",
+  "description": "Scale play speed in video tags.",
   "version": "1.0.0",
 
   "options_page":"options/options.html",
@@ -16,12 +16,20 @@
   ],
 
   "permissions": [
-    "storage"
+    "storage",
+    "contextMenus"
   ],
 
   "web_accessible_resources": [
-    "main.js",
-    "style.css",
+    "js/common.js",
+    "js/case_vk.js",
+    "js/case_youtube.js",
+    "js/case_others.js",
+    "js/iframe_content.js",
+    "css/styles_YT.css",
+    "css/styles_VK.css",
+    "css/styles_FB.css",
+    "css/styles_others.css",
     "options/options.css",
     "options/options.js"
   ]
