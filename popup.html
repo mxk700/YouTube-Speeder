@@ -1,0 +1,100 @@
+<style>
+  body{
+    background-color: #ffd683;
+  }
+  nav{
+    position: relative;
+    padding: 1em;
+    font-size: 1.5em;
+    text-align: center;
+  }
+  button{
+    width: 120px;
+    height: 42px;
+    border-radius: 2em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    text-align: center;
+    transition: background-color 1s;
+    background: linear-gradient(to right, red 0, orange 45%, lightgreen 55%, darkcyan 100%) 0 0;
+    background-size: 330px 100%;
+  }
+  button.active{
+    background-position-x: -175px;
+  }
+  button::before{
+    content: "Off";
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 21px;
+    top: 21px;
+    border-radius: 100%;
+    background: #fff;
+    text-align: center;
+    line-height: 38px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+  }
+  button.animated::before{
+    transition: left .5s ease, color .5s ease, transform .15s ease;
+  }
+
+  button.active::before{
+    content: "On";
+    left: 98px;
+    color: darkcyan;
+  }
+  button:hover{
+    background-color: grey;
+  }
+  p{
+    margin: 14px 0;
+    padding: 0;
+    text-align: center;
+  }
+  a{
+    display: inline-block;
+    margin-top: 8px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  a:hover{
+    border-bottom: 2px solid #000;
+  }
+
+  #text_wrapper{
+    height: 0;
+    transition: height .4s ease;
+  }
+  #text_wrapper.active{
+    height: 120px;
+  }
+
+  #info{
+    transform: translateY(-120px);
+    transition: transform .4s ease, opacity .2s .3s;
+    opacity: 0;
+  }
+  #text_wrapper.active #info{
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
+<nav>
+  <button id="switcher"></button>
+  <div id="text_wrapper">
+    <p id="info"></p>
+  </div>
+  <a target="_blank" href="./options/options.html">Options</a>
+</nav>
+<script src="popup.js"></script>
+
+

@@ -31,7 +31,7 @@
           saveSettingsToStorage(DEFAULT);
           loadSettingsToDOM(DEFAULT);
         }
-        
+
         initListeners();
       }
     );
@@ -116,13 +116,16 @@
       if( elem.tagName !== "INPUT" ) return;
       if( (elem === document.activeElement) && (elem.id !== "slider")) return;
 
+      e.stopPropagation();
+      e.preventDefault();
+
       if(e.deltaY < 0){
         elem.value = round(+elem.value + +elem.step);
       }else{
         elem.value = round(+elem.value - +elem.step);
       }
       elem.dispatchEvent( new InputEvent("input", { 'bubbles': true, 'cancelable': true} ) );
-    });
+    }, {passive: false});
   }
 
   function saveSettingsToStorage( settings ){

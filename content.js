@@ -1,6 +1,10 @@
 "use strict";
 
-(function(){
+chrome.storage.local.get( "MXSpeederRun", function(res){
+    (res.MXSpeederRun === "ON") && start();
+});
+
+function start(){
   const EXT_PATH     = 'chrome-extension://' + chrome.runtime.id;
   const IFR_CONTENT  = EXT_PATH + '/js/iframe_content.js';
   const COMMON       = EXT_PATH + '/js/common.js';
@@ -137,4 +141,4 @@
     });
   }
 
-})();
+}
