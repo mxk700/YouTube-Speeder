@@ -21,6 +21,8 @@
     }
   ],
 
+  "icons": { "128": "img/icon128on.png" },
+
   "options_page":"options/options.html",
 
   "permissions": [

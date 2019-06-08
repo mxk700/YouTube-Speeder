@@ -34,8 +34,11 @@ When accelerated, speed change step is multiplied by the value set in Options as
 Pressing Page Up or Page Down also changes speed value by 0.5.
 
 ##### Options
-You also can adjust The YouTube Speeder settings for your convenience.
-To get to the Options Page go to **chrome://extensions/**, find this Extension, click on "Details" button, then find "Extension options". In the Options Page you can set minimal, maximal and default speed value, as well as some others parameters.
+You can also adjust The YouTube Speeder settings for your convenience.
+In the Options Page you can set minimal, maximal and default speed value, as well as some others parameters. All
+the params can be easily set by  mouse wheel.
+To get to the Options Page click Video Speeder icon on Chrome Toolbar and then click "Options". Another way:
+go to **chrome://extensions/**, find this Extension, click on "Details" button, then find "Extension options".
 
 ##### Installation
 To install unpacked Chrome Extension follow the instructions here:

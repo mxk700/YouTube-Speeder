@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Speeder Extension Options</title>
+    <link rel="stylesheet" href="/options/options.css">
+    <link rel="shortcut icon" type="image/png" href="/img/icon16on.png"/>
+  </head>
+  <body>
+    <div id="container">
+      <h2>Video Speeder Options</h2>
+      <hr>
+      <div id="options">
+        <table>
+          <tr>
+            <td><label for="step" title="The value to change speed gradually">Step</label></td>
+            <td><input type="number" id="step" name="step" min="0.1" max="2" step="0.1"></td>
+          </tr>
+          <tr>
+            <td><label for="mul" title="The value for scaled speed changing (for Acceleration Mode)">Speed multiplier</label></td>
+            <td><input type="number" id="mul" name="mul" min="1" max="20" step="1"></td>
+          </tr>
+          <tr>
+            <td><label for="mdd" title="Waiting time before changing speed by mouse pressed and held">Mouse delay, ms</label></td>
+            <td><input type="number" id="mdd" name="mdd" min="10" max="2000" step="10"></td>
+          </tr>
+          <tr>
+            <td><label for="mda" title="Speed changing frequency when mouse pressed and held">Mouse interval, ms</label></td>
+            <td><input type="number" id="mda" name="mda" min="10" max="2000" step="10"></td>
+          </tr>
+        </table>
+      </div>
+      <hr>
+      <div id="sliderDiv">
+        <div class="sliderLabelsDiv">
+          <label for="min">min </label>
+          <br>
+          <input type="number" id="min" name="min" min="0.1" max="10" step="0.1">
+        </div>
+        <div class="sliderLabelsDiv" id="defDiv">
+          <label for="def">default</label>
+          <br>
+          <input type="number" id="def" name="def" min="0.1" max="10" step="0.1">
+        </div>
+        <input id="slider" type="range" name="slider" min="0.1" max="4" step="0.1" value="1">
+        <div class="sliderLabelsDiv">
+          <label for="max">max</label>
+          <br>
+          <input type="number" id="max" name="max" min="0.1" max="10" step="0.1">
+        </div>
+      </div>
+      <hr>
+      <div id="buttons">
+        <button type="button" name="reset">Reset</button>
+        <button type="button" name="save">Save</button>
+        <button type="button" name="close">Close</button>
+      </div>
+      <hr>
+      <a href="mailto:mxk700@gmail.com">mxk700@gmail.com</a>
+      <br>
+      <span>&copy 2018, Max Kurylko</span>
+    </div>
+    <script src="/options/options.js"></script>
+  </body>
+</html>

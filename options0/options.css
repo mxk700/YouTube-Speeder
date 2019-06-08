@@ -1,0 +1,82 @@
+body {
+  background-color: grey;
+}
+
+#container{
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  font-size: large;
+  transform: translate(-50%);
+  margin-top: 3em;
+  padding: 1em;
+  border-radius: 3%;
+  background-color: orange;
+  text-align: center;
+  overflow: hidden;
+}
+
+h2 {
+  margin: 0 1em;
+  color: purple;
+}
+
+hr {
+  margin: .9em 0;
+}
+
+table label {
+  position: relative;
+  float: right;
+  padding-left: 2.5em;
+}
+
+input{
+  width: 4em;
+  border-radius: 0.3em;
+  background-color: cornsilk;
+  text-align: right;
+}
+
+table input {
+  margin-left: 1em;
+}
+
+#buttons button:nth-child(2){
+  margin: 0 5%;
+}
+button {
+  font-size: large;
+  width: 27%;
+  padding: .3em 0;
+  color: purple;
+  border-radius: .3em;
+  transition: .25s;
+}
+button:hover {
+  background-color: #b3b3b3;
+}
+
+#sliderDiv {
+  position: relative;
+}
+
+.sliderLabelsDiv {
+  display: inline-block;
+  position: relative;
+  top:-.4em;
+  text-align: center;
+}
+
+#slider {
+  width: 55%;
+  margin: 4em 2% 0 2%;
+}
+
+#defDiv {
+  position: absolute;
+}
+
+#def {
+  width: 3em;
+}

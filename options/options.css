@@ -1,5 +1,6 @@
 body {
-  background-color: grey;
+  background-color: #A2AEBB;
+  color: #1d1d1d;
 }
 
 #container{
@@ -11,30 +12,42 @@ body {
   margin-top: 3em;
   padding: 1em;
   border-radius: 3%;
-  background-color: orange;
+  background-color: #3F88C5;
   text-align: center;
   overflow: hidden;
 }
 
 h2 {
   margin: 0 1em;
-  color: purple;
+  font-weight: 500;
+  font-family: cursive;
 }
-
+p{
+  margin: 10px 0 0 0;
+  font-family: cursive;
+}
+a{
+  color: navy;
+}
 hr {
   margin: .9em 0;
 }
 
+#params{
+  display: flex;
+}
+#logo{
+  margin: 3px 0 0 10px;
+}
 table label {
   position: relative;
   float: right;
-  padding-left: 2.5em;
 }
 
 input{
   width: 4em;
   border-radius: 0.3em;
-  background-color: cornsilk;
+  background-color: #fff;
   text-align: right;
 }
 
@@ -48,33 +61,69 @@ table input {
 button {
   font-size: large;
   width: 27%;
-  padding: .3em 0;
-  color: purple;
-  border-radius: .3em;
-  transition: .25s;
+  padding: 8px 0;
+  border-radius: 8px;
+  transition: .3s;
+  color: #222222;
+  background-color: #b6b6b6;
+  border: none;
 }
 button:hover {
-  background-color: #b3b3b3;
+  background-color: #808080;
 }
 
 #sliderDiv {
-  position: relative;
+  display: flex;
 }
 
-.sliderLabelsDiv {
-  display: inline-block;
-  position: relative;
-  top:-.4em;
-  text-align: center;
+#sliderDiv > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background-color .5s;
+  background-color: #b6b6b6;
+}
+#sliderDiv > div:hover {
+  background-color: #808080;
+}
+#sliderDiv label {
+  display: block;
+  padding-bottom: 3px;
+  font-size: 14px;
 }
 
+#min_wrapper, #max_wrapper{
+  padding: 10px;
+}
+#min_wrapper{
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 5px;
+}
+#max_wrapper{
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 5px;
+}
+#min, #max{
+  width: 3em;
+}
 #slider {
-  width: 55%;
-  margin: 4em 2% 0 2%;
+  width: 100%;
+  margin: 0 0 9px 0;
 }
 
 #defDiv {
+  position: relative;
+  flex-grow: 2;
+  padding: 52px 28px 0 28px;
+  border-left: solid 2px grey;
+  border-right: solid 2px grey;
+}
+#defLabel{
+  display: flex;
   position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 1px;
 }
 
 #def {

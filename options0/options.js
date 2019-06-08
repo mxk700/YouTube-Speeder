@@ -11,13 +11,11 @@
     mouseInterval: 100
   };
 
-  var slider     = document.getElementById("slider");
-  var sliderMin  = document.getElementById("min");
-  var sliderMax  = document.getElementById("max");
-  var sliderDef  = document.getElementById("def");
+  var slider = document.getElementById("slider");
+  var sliderMin = document.getElementById("min");
+  var sliderMax = document.getElementById("max");
+  var sliderDef = document.getElementById("def");
   var sliderStep = document.getElementById("step");
-  var defLabel   = document.getElementById("defLabel");
-  var defDiv     = document.getElementById("defDiv");
 
   var multiplier = document.getElementById("mul");
   var mouseWait = document.getElementById("mdd");
@@ -46,7 +44,7 @@
 
       if(elem === slider){
         sliderDef.value = slider.value;
-        // console.log(e);
+        console.log(e);
         setSliderDef();
         return;
       }
@@ -113,18 +111,11 @@
     });
 
     document.body.addEventListener("wheel", function(e){
-      var elem;
-      if( isParent(e.target, defDiv) ){
-        elem = sliderDef;
-      }else if(isParent(e.target, sliderMin.parentElement)){
-        elem = sliderMin;
-      }else if(isParent(e.target, sliderMax.parentElement)){
-        elem = sliderMax;
-      }else{
-        elem = e.target;
-        if( elem.tagName !== "INPUT" ) return;
-        if( (elem === document.activeElement) && (elem.id !== "slider")) return;
-      }
+      if( !e.path[0] ) return;
+
+      var elem = e.path[0];
+      if( elem.tagName !== "INPUT" ) return;
+      if( (elem === document.activeElement) && (elem.id !== "slider")) return;
 
       e.preventDefault();
       e.stopPropagation();
@@ -135,6 +126,7 @@
         elem.value = round(+elem.value - +elem.step);
       }
       var inputEvent = new InputEvent("input", { 'bubbles': true, "cancelable": true} );
+      inputEvent.madeByWheel = true;
       elem.dispatchEvent( inputEvent );
 
     }, {passive: false});
@@ -168,24 +160,26 @@
   }
 
   function setSliderDef() {
-    var OFFSET = 8;
-    var RANGE_SHRINK = 10;
+    const TODDLER_WIDTH = 6;
 
     slider.value = sliderDef.value;
     var sliderRange = sliderMax.value - sliderMin.value;
     var rel = (+slider.value - slider.min) / sliderRange;
     var width = slider.getBoundingClientRect().width;
+    var pos = (width - TODDLER_WIDTH*2) * rel;
+    pos = round(pos);
 
-    defLabel.style.left = round( (width - RANGE_SHRINK) * rel ) + OFFSET + "px";
+    var offsetLeft = sliderMin.parentElement.offsetWidth + TODDLER_WIDTH;
+    offsetLeft += parseInt( window.getComputedStyle(slider).marginLeft );
+    var defHalf = round(sliderDef.parentElement.offsetWidth / 2);
+
+    sliderDef.parentElement.style.left = round(offsetLeft + pos - defHalf) + "px";
+    // console.log(round(offsetLeft + pos - defHalf) + "px");
+    console.log(pos);
   }
 
   function round(x){
     return Math.round( x*10 ) / 10;
   }
 
-  function isParent(elem, parentElem){
-    if(elem === parentElem) return true;
-    if(elem.tagName === "BODY") return false;
-    return isParent(elem.parentElement, parentElem);
-  }
 })();
