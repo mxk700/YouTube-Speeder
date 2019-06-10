@@ -92,14 +92,27 @@ doing it I've acquired some useful skills, i.e.:
 
 
                                 OPTIONS PART
-  Personally, I like when some useful tools are shipped with possibility for custom adjustment. That's why I
-  provided users with option page where one can set default speed, min, max and some other speeder parameters.
-  Technically it wasn't hard, I just specified options_page in the manifest and add options javascript
+     Personally, I like when useful tools are shipped with possibility for custom adjustment. That's why I
+  provided users with option page where one can set min, max and default speed plus some other speeder
+  parameters as well.
+     Technically it wasn't hard, I just specified options_page in the manifest and add options javascript
   and css files to web_accessible_resources. I found no information about options working scope at Chrome
   Developer Guide, but empirically approved that it is possible to use chrome.storage there. So, parameters
   chosen by user are stored in Chrome Local Storage. This way of storage is more preferable
   as it has no dependency on url or type of protocol. Another advantage is that a user can synchronize
   settings on different devices working under the same account.
+     I find it hard for an average user to get to options page from Chrome Extensions page, that's
+  why I added Video Speeder button to the Chrome Toolbar in the right top part of the browser. When clicked,
+  it shows small popup menu, where a user in easy way can switch the extension on/off or open options page.
+  As popup's script has access to chrome.storage, I put current state of the extension there. And I was compelled
+  to add a background script for the only one purpose to set proper extension icon in Chrome Toolbar when the
+  browser is opened first time. It takes current state in chrome.storage, then sets appropriate icon. In short
+  words, the logic is:
+  - background gets info of the extension state in chrome.storage and sets proper icon;
+  - a user clicks the button in Chrome Toolbar and switches the extension;
+  - popup.js changes the extension state in chrome.storage;
+  - next time content.js runs on page it checks the extension state in chrome.storage,
+  and if it is "off" stops working.
 
 
 
@@ -120,12 +133,12 @@ doing it I've acquired some useful skills, i.e.:
   particular case, but not for an arbitrary website. And again, they can noticeably worsen performance.
     While creating this Chrome Extension I:
   1. Enhanced my overall knowledge about Chrome Extension anatomy. Manifest, content script, options page,
-  different scopes for content script, options page and appended scripts.
+  browser actions, different scopes for content script and options and appended scripts.
   2. Used Chrome Storage API (don't mix up with window.localStorage) and windows messaging.
   3. Realized the CSS benefits of the Shadow DOM.
   4. Approved the fact that Mutation Observer is great in replacement of numerous mouse events.
   5. Found and solved issues with running custom scripts in blank iframes.
-  6. Shared in window functions and variables between different scripts.
+  6. Shared in "window" functions and variables between different scripts.
   7. Didn't forget to disconnect MutationObserver and remove EventListener when there were no
   need in them to exclude excessive performance load.
   8. Engaged Prototypal Inheritance for better Extension adoption for different sites.
@@ -134,10 +147,12 @@ doing it I've acquired some useful skills, i.e.:
     specific Prototype (unique for a particular site functions and options ) ->
     common Speeder Object (has all the buttons, inputs and other) ->
     specific Speeder Object (has involved environment relative to video tag ).
-  9. Published the Extension.
-  10. Uploaded the Extension code to github.
+  9. Uploaded the Extension code to github.
+  10. Published the Extension.
 
 
 
   KEYS CLOUD
-MutationObserver, content, chrome.runtime....
+MutationObserver, chrome.runtime, prototype, inheritance, browser action, content script, options page,
+background page, chrome.storage, popup menu, manifest, passing functions, cross-script messages,
+iframes features, playbackRate, Shadow DOM, publishing extensions, github.

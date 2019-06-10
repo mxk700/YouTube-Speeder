@@ -1,11 +1,11 @@
-#### Advanced YouTube Speed Manager
+#### Advanced Video Speed Manager
 Watch your sport, games, news, tutorials, foreign language lessons, etc. with handy speed controller.
 
 ##### How does it work?
-Content script is run in every tab you open and in every iframe of the tab. The script searches for YouTube videos and embeds there block with Speeder controls.
+Content script is run in every tab you open and in every iframe of the tab. The script searches for video tags and embeds there block with Speeder controls.
 
 ##### Use and controls
-With The YouTube Speeder you've dreamed about you can set playback speed using:
+With The Video Speeder you've dreamed about you can set playback speed using:
 ###### Mouse:
   - wheel;
   - click on slider range;
@@ -34,7 +34,7 @@ When accelerated, speed change step is multiplied by the value set in Options as
 Pressing Page Up or Page Down also changes speed value by 0.5.
 
 ##### Options
-You can also adjust The YouTube Speeder settings for your convenience.
+You can also adjust The Video Speeder settings for your convenience.
 In the Options Page you can set minimal, maximal and default speed value, as well as some others parameters. All
 the params can be easily set by  mouse wheel.
 To get to the Options Page click Video Speeder icon on Chrome Toolbar and then click "Options". Another way:
