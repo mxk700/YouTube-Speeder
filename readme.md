@@ -1,12 +1,12 @@
-#### Advanced Video Speed Manager
+#### Advanced Video Speeder Manager
 Watch your sport, games, news, tutorials, foreign language lessons, etc. with handy speed controller.
 
 ##### How does it work?
-Content script is run in every tab you open and in every iframe of the tab. The script searches for video tags and embeds there block with Speeder controls.
+Content script is run in every tab you open and in every iframe of the tab. The script searches for video tags and embeds there a block with Speeder controls.
 
 ##### Use and controls
 With The Video Speeder you've dreamed about you can set playback speed using:
-###### Mouse:
+###### a mouse:
   - wheel;
   - click on slider range;
   - click on orange arrows within the slider;
@@ -14,13 +14,13 @@ With The Video Speeder you've dreamed about you can set playback speed using:
   - click on rounded orange square within the slider to set speed to default;
 
 ###### Keyboard:
-To use keyboard, mouse pointer should be hovered over the slider block  (the latest becomes a little brighter). Placing mouse pointer over the slider block also prevents YouTube top and bottom panels from hiding. In this mode you can use the next keys:
-  - speed up: Right Arrow, Up Arrow, + button;
+To use the keyboard, the mouse pointer should be hovered over the slider block  (the latest becoming a little brighter). Placing mouse pointer over the slider block also prevents YouTube top and bottom panels from hiding. In this mode you can use the next keys:
+  - speed up: Right Arrow, Up Arrow or + button;
   - speed up with acceleration: Page Up;
-  - speed down: Left Arrow, Down Arrow, - button;
+  - speed down: Left Arrow, Down Arrow or - button;
   - speed down with acceleration: Page Down;
   - maximal value: End;
-  - default value: Home, Space, Enter, Escape.
+  - default value: Home, Space, Enter or Escape.
   - minimal value: Delete;
 
 ###### Acceleration Mode.
@@ -35,8 +35,8 @@ Pressing Page Up or Page Down also changes speed value by 0.5.
 
 ##### Options
 You can also adjust The Video Speeder settings for your convenience.
-In the Options Page you can set minimal, maximal and default speed value, as well as some others parameters. All
-the params can be easily set by  mouse wheel.
+On the Options Page you can set minimal, maximal and default speed value, as well as some others parameters. All
+the parameters can be easily set by mouse wheel.
 To get to the Options Page click Video Speeder icon on Chrome Toolbar and then click "Options". Another way:
 go to **chrome://extensions/**, find this Extension, click on "Details" button, then find "Extension options".
 

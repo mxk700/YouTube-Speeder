@@ -129,3 +129,22 @@ button:hover {
 #def {
   width: 3em;
 }
+
+#nav_informer{
+  display: none;
+}
+#nav_informer.active{
+  display: block;
+}
+
+.icon_info{
+  font-size: 11px;
+}
+.icon_link{
+  text-decoration: none;
+}
+.icon_info img{
+  position: relative;
+  top: 5px;
+  filter: grayscale(100%);
+}

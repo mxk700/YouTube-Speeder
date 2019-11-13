@@ -11,13 +11,14 @@
     mouseInterval: 100
   };
 
-  var slider     = document.getElementById("slider");
-  var sliderMin  = document.getElementById("min");
-  var sliderMax  = document.getElementById("max");
-  var sliderDef  = document.getElementById("def");
-  var sliderStep = document.getElementById("step");
-  var defLabel   = document.getElementById("defLabel");
-  var defDiv     = document.getElementById("defDiv");
+  var slider      = document.getElementById("slider");
+  var sliderMin   = document.getElementById("min");
+  var sliderMax   = document.getElementById("max");
+  var sliderDef   = document.getElementById("def");
+  var sliderStep  = document.getElementById("step");
+  var defLabel    = document.getElementById("defLabel");
+  var defDiv      = document.getElementById("defDiv");
+  var navInformer = document.getElementById("nav_informer");
 
   var multiplier = document.getElementById("mul");
   var mouseWait = document.getElementById("mdd");
@@ -91,9 +92,13 @@
       switch (elem.name) {
         case "reset":
           loadSettingsToDOM(DEFAULT);
+          navInformer.innerText = "Options have been set to default.";
+          navInformer.classList.add("active");
           break;
         case "save":
           saveSettingsToStorage(null);   //  if null argument, load settings from DOM
+          navInformer.innerText = "Options have been saved.";
+          navInformer.classList.add("active");
           break;
         case "close":
           window.close();

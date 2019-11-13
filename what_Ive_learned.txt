@@ -18,7 +18,8 @@ doing it I've acquired some useful skills, i.e.:
   video tags on the Web. That's why I found it important to divide the code into several semantic bricks.
   It's pretty obvious that code that handle unique YouTube environment is useless in non-YouTube pages, so
   the final structure consists of:
-    + manifest.json. Every Chrome Extension has it. Here...............
+    + manifest.json. Every Chrome Extension has it. Here we describe features from Chrome Extesion API which 
+    we are going to use, version, extension descriptions, resourses to use, some security adjustments, etc.
     + content.js. The start point of the extension. It is run in all the pages and iframes that
     have "src" attribute different from "about:blank" and contains default settings and paths. It does:
       - append common.js and a proper script (in dependency of window.location.host);
